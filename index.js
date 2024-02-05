@@ -18,13 +18,10 @@ function Phrase(content) {
   // 利用例:
   //   new Phrase("Hello, world!").letters() === "Helloworld"
   this.letters = function letters() {
-    let theLetters = [];
-    for (let i = 0; i < this.content.length; i++) {
-      if (this.content.charAt(i).match(/[a-zA-Z]/)) {
-        theLetters.push(this.content.charAt(i));
-      }
-    }
-    return theLetters.join("");
+    const letterRegex = /[a-z]/i;
+    return Array.from(this.content)
+      .filter((c) => c.match(letterRegex))
+      .join("");
   };
 
   // パリンドロームならtrueを、違うならfalseを返す
