@@ -22,6 +22,11 @@ describe("Phrase", function () {
       let punctuatedPalindrome = new Phrase("Madam, I'm Adam.");
       assert(punctuatedPalindrome.palindrome());
     });
+
+    it("空文字の場合はfalseを返す", function () {
+      let emptyPhrase = new Phrase("");
+      assert.strictEqual(emptyPhrase.palindrome(), false);
+    });
   });
 
   describe("#letters", function () {
